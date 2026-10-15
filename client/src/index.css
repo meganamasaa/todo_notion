@@ -1,0 +1,461 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: #fff;
+  color: #37352f;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== TopBar ===== */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 45px;
+  padding: 0 12px;
+  border-bottom: 1px solid #e8e8e8;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #37352f;
+}
+
+.topbar-icon {
+  font-size: 16px;
+}
+
+.topbar-title {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 250px;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.topbar-edited {
+  font-size: 12px;
+  color: #9b9a97;
+}
+
+.topbar-share-btn {
+  background: #fff;
+  border: 1px solid #d3d3d3;
+  border-radius: 4px;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #37352f;
+}
+
+.topbar-share-btn:hover {
+  background: #f7f6f3;
+}
+
+.session-badge {
+  font-size: 11px;
+  background: #e8e5ff;
+  color: #5b4fc4;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+.owner-badge {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #e8e5ff;
+  color: #5b4fc4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.topbar-menu-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #9b9a97;
+  padding: 2px 6px;
+  letter-spacing: 1px;
+}
+
+/* ===== Guest Banner ===== */
+.guest-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background: #faf9f6;
+  border-bottom: 1px solid #e8e8e8;
+  font-size: 13px;
+}
+
+.guest-banner-text {
+  color: #6b6b6b;
+}
+
+.guest-banner-cta {
+  color: #2383e2;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.guest-banner-cta:hover {
+  text-decoration: underline;
+}
+
+/* ===== Page Layout ===== */
+.page-layout {
+  display: flex;
+  min-height: calc(100vh - 90px);
+}
+
+.page-content {
+  flex: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 96px;
+}
+
+/* ===== Page Cover ===== */
+.page-cover {
+  display: flex;
+  align-items: center;
+  padding: 40px 0 10px;
+}
+
+.cover-emoji {
+  font-size: 78px;
+  line-height: 1;
+}
+
+/* ===== Block Styles ===== */
+.page-body {
+  padding: 10px 0 80px;
+}
+
+.block {
+  outline: none;
+  border-radius: 3px;
+  padding: 3px 2px;
+  transition: background 0.15s;
+  cursor: text;
+}
+
+.block:focus {
+  background: #f1f1ef;
+}
+
+.block-heading {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 28px;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.block-heading:first-child {
+  font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.block-paragraph {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 4px;
+  color: #37352f;
+}
+
+/* ===== Share Modal ===== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 100px;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 8px;
+  width: 440px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  padding: 0;
+  overflow: hidden;
+}
+
+.modal-tabs {
+  display: flex;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 0 16px;
+}
+
+.modal-tab {
+  background: none;
+  border: none;
+  padding: 12px 12px;
+  font-size: 14px;
+  color: #9b9a97;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.modal-tab.active {
+  color: #37352f;
+  border-bottom-color: #37352f;
+  font-weight: 500;
+}
+
+.modal-invite-row {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+}
+
+.modal-invite-input {
+  flex: 1;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 13px;
+  outline: none;
+  color: #9b9a97;
+}
+
+.modal-invite-btn {
+  background: #2383e2;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.modal-invite-btn:hover {
+  background: #1b6ec2;
+}
+
+.modal-user-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+}
+
+.modal-user-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #e8e5ff;
+  color: #5b4fc4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.modal-user-info {
+  flex: 1;
+}
+
+.modal-user-name {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.modal-user-access {
+  font-size: 12px;
+  color: #9b9a97;
+}
+
+.modal-divider {
+  height: 1px;
+  background: #e8e8e8;
+  margin: 4px 0;
+}
+
+.modal-general-access {
+  padding: 10px 16px;
+}
+
+.modal-access-label {
+  font-size: 11px;
+  color: #9b9a97;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.modal-access-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.modal-access-icon {
+  font-size: 16px;
+}
+
+.modal-access-text {
+  flex: 1;
+  color: #37352f;
+}
+
+.modal-access-level {
+  color: #9b9a97;
+  font-size: 12px;
+}
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+}
+
+.modal-learn-link {
+  font-size: 12px;
+  color: #9b9a97;
+  cursor: pointer;
+}
+
+.modal-learn-link:hover {
+  color: #37352f;
+}
+
+.modal-copy-btn {
+  background: #fff;
+  border: 1px solid #d3d3d3;
+  border-radius: 4px;
+  padding: 5px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.modal-copy-btn:hover {
+  background: #f7f6f3;
+}
+
+/* ===== History Panel ===== */
+.history-panel {
+  width: 280px;
+  border-left: 1px solid #e8e8e8;
+  background: #faf9f6;
+  flex-shrink: 0;
+  overflow-y: auto;
+}
+
+.history-panel.collapsed {
+  width: 40px;
+}
+
+.history-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #37352f;
+  cursor: pointer;
+  border-bottom: 1px solid #e8e8e8;
+  user-select: none;
+}
+
+.history-toggle {
+  font-size: 10px;
+  color: #9b9a97;
+}
+
+.history-panel.collapsed .history-header {
+  justify-content: center;
+  padding: 12px 8px;
+}
+
+.history-panel.collapsed .history-header span:first-child {
+  display: none;
+}
+
+.history-list {
+  padding: 8px 0;
+}
+
+.history-empty {
+  padding: 20px 14px;
+  font-size: 13px;
+  color: #9b9a97;
+  text-align: center;
+}
+
+.history-entry {
+  padding: 8px 14px;
+  border-bottom: 1px solid #efefef;
+}
+
+.history-entry-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.history-session {
+  font-size: 12px;
+  font-weight: 600;
+  color: #5b4fc4;
+  background: #e8e5ff;
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+
+.history-time {
+  font-size: 11px;
+  color: #9b9a97;
+}
+
+.history-content {
+  font-size: 12px;
+  color: #6b6b6b;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
